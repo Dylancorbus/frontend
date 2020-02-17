@@ -1,25 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import { ScrollView, ScrollEventData } from 'tns-core-modules/ui/scroll-view';
 import {LocationService} from '@src/app/services/location.service';
+import {Location} from '@src/app/models/location';
+import {TrucksService} from '@src/app/services/trucks.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   title = 'frontend';
-  public coordinates: string;
 
-  constructor(private location: LocationService) { }
+  constructor(private locationService: LocationService, private trucksService: TrucksService) { }
 
   ngOnInit() {
-    this.location.getLocation().then(function (location) {
-      console.log(location);
-      this.coordinates = location.latitude + '' + location.longitude;
-    }, function (e) {
-      console.log('Error: ' + e.message);
-    });
+  }
+
+  ngAfterViewInit() {
   }
 
   onScroll(args: ScrollEventData) {

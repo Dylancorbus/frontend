@@ -1,5 +1,45 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
+@import 'app-variables';
+
 .wht-txt {
   color: white;
+}
+
+.blk-txt {
+  color: black;
+}
+
+.home {
+  background: white;
+  height: 100%;
+}
+
+.avail-truck {
+
+}
+.drawer-header {
+  margin-bottom: 5%;
+}
+
+.drawer-image {
+  width: 50%;
+}
+.btn-primary {
+  height: 50;
+  margin: 15 5 13 5;
+  background-color: $theme-color;
+  color: white;
+  border-radius: 5;
+  font-size: 20;
+  font-weight: 600;
+}
+
+.main-content-grid {
+  background-color: $theme-color;
+
+}
+
+.btn {
+  background: $theme-color;
 }

@@ -9,3 +9,25 @@
 @import 'app-common';
 
 // Place any CSS rules you want to apply only on iOS here
+.ios-text-field {
+  border-radius: 5;
+  height: 5%;
+  width: 80%;
+  margin-top: 3%;
+  background: lightgray;
+}
+
+.sign-out-label {
+  margin-top: 47%;
+  background: darkslategray;
+  border-radius: 5;
+  color: white;
+  border-width: 2;
+  width: 40%;
+  height: 7%;
+  font-size: 23%;
+}
+.toggle-nav {
+  font-size: 40%;
+  color: white;
+}

@@ -1,1 +1,10 @@
-<Button text="profile works!" class="btn btn-primary"></Button>
+<StackLayout>
+    <Image class="profile-image" width="50%" [src]="this.auth.user.profilePic"
+       borderRadius="100%"></Image>
+    <Label text="Change photo" class="photo-change" (tap)="pickProfilePic()"></Label>
+    <TextField class="blk-txt ios-text-field" [(ngModel)]="this.auth.user.firstName" hint="Firstname"></TextField>
+    <TextField class="blk-txt ios-text-field" [(ngModel)]="this.auth.user.lastName" hint="Lastname"></TextField>
+    <TextField class="blk-txt ios-text-field" [(ngModel)]="this.auth.user.email" hint="Email"></TextField>
+    <Button text="Save" class="btn btn-primary m-t-10"></Button>
+
+</StackLayout>

@@ -26,7 +26,7 @@ import { NavComponent } from '@src/app/components/nav/nav.component';
         AppRoutingModule,
         NativeScriptHttpClientModule,
         NativeScriptFormsModule,
-        NativeScriptUISideDrawerModule
+        NativeScriptUISideDrawerModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

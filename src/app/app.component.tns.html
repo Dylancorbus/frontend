@@ -1,22 +1,31 @@
 <GridLayout rows="*" height="100%">
     <RadSideDrawer>
-        <StackLayout tkDrawerContent backgroundColor="gray">
-            <StackLayout height="56" style="text-align: center; vertical-align: center;">
-                <Label text="Navigation Menu"></Label>
+        <StackLayout tkDrawerContent backgroundColor="#D51A1A">
+            <StackLayout row="0" class="nt-drawer__header" [nsRouterLink]="['/profile']" (tap)="onCloseDrawerTap()">
+                <Label text="Navigation Menu" class="h2 drawer-header"></Label>
+                <Image class="drawer-image" [src]="this.auth.user.profilePic"
+                       borderRadius="100%"></Image>
+                <Label class="blk-txt" [text]="this.auth.user.firstName"></Label>
+                <Label class="blk-txt" [text]="this.auth.user.email"></Label>
             </StackLayout>
             <StackLayout>
-                <Label text="Home" [nsRouterLink]="['/home']" padding="10" backgroundColor="lightgray"></Label>
-                <Label text="Profile" [nsRouterLink]="['/profile']" padding="10" backgroundColor="lightgray"></Label>
-            </StackLayout>
-            <Label text="Close" color="lightgray" padding="10" style="horizontal-align: center"
+                <Label text="Home" [nsRouterLink]="['/home']" (tap)="onCloseDrawerTap()" class="blk-txt" padding="10" backgroundColor="lightgray"></Label>
+                <Label text="Profile" [nsRouterLink]="['/profile']" (tap)="onCloseDrawerTap()" class="blk-txt" padding="10" backgroundColor="lightgray"></Label>
+                <Label text="Close" class="blk-txt text-center"  padding="10" backgroundColor="lightgray" width="100%" style="horizontal-align: center"
                    (tap)="onCloseDrawerTap()"></Label>
+            </StackLayout>
+            <Button *ngIf="this.auth.loggedIn" text="Sign out" row="0" col="0"
+                    [nsRouterLink]="['/login']" borderWidth="0" class="sign-out-label m-t-10" (tap)="signOut()"></Button>
         </StackLayout>
-        <StackLayout tkMainContent>
-            <GridLayout *ngIf="this.auth.loggedIn" columns="60, *, 60" rows="60, auto, *" width="100%" height="10%" backgroundColor="red">
-                    <Button text="&#9776;" row="0" col="0" class="toggle-nav" (tap)="openDrawer()"></Button>
-                    <Label [text]="title" class="h2 wht-txt" row="0" col="1" textAlignment="center" verticalAlignment="middle"></Label>
+        <StackLayout tkMainContent backgroundColor="white">
+            <GridLayout columns="60, *, 60" rows="60, auto, *" width="100%" height="10%" class="main-content-grid">
+                <Button *ngIf="this.auth.loggedIn" text="&#9776;" row="0" col="0" backgroundColor="transparent"
+                        borderWidth="0" class="toggle-nav text-light" (tap)="openDrawer()"></Button>
+                <Label [text]="title" class="h2 wht-txt" row="0" col="1" textAlignment="center"
+                       verticalAlignment="middle"></Label>
             </GridLayout>
-            <page-router-outlet row="1" col="0" actionBarVisibility="never"></page-router-outlet>
+            <router-outlet></router-outlet>
         </StackLayout>
+
     </RadSideDrawer>
 </GridLayout>

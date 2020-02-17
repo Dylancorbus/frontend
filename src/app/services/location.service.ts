@@ -1,14 +1,12 @@
 import {Injectable} from '@angular/core';
 import * as geolocation from 'nativescript-geolocation';
-import {Accuracy} from 'tns-core-modules/ui/enums';
-
+import { Location } from '../models/location';
 @Injectable({
     providedIn: 'root'
 })
 export class LocationService {
 
-    public lat = 0;
-    public lng = 0;
+    public location: Location;
 
     constructor() {
         if (!geolocation.isEnabled()) {
@@ -20,7 +18,7 @@ export class LocationService {
         }
     }
 
-  public getLocation() {
+    public getLocation() {
         return geolocation.getCurrentLocation({
             desiredAccuracy: 1,
             updateDistance: 10,

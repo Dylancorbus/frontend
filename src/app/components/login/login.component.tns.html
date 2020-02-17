@@ -1,7 +1,7 @@
 <StackLayout class="page">
-    <StackLayout class="form">
+    <StackLayout class="form" ios:marginTop="18%" android:marginTop="13%">
         <Image class="logo" src="~/assets/logo.png"></Image>
-        <Label class="header" text="Mobile Order App"></Label>
+        <Label class="header" [text]="title"></Label>
 
         <StackLayout class="input-field">
             <TextField class="input" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.email" returnKeyType="next" (returnPress)="focusPassword()"></TextField>
@@ -18,10 +18,9 @@
             <StackLayout class="hr-light"></StackLayout>
         </StackLayout>
 
-        <Button [text]="isLoggingIn ? 'Log In' : 'Sign Up'" (tap)="submit()" class="btn btn-primary m-t-20"></Button>
-        <Label *ngIf="isLoggingIn" text="Forgot your password?" class="login-label" (tap)="forgotPassword()"></Label>
+        <Button [text]="isLoggingIn ? 'Log In' : 'Sign Up'" (tap)="submit()" class="btn btn-primary m-t-10"></Button>
+        <Label *ngIf="isLoggingIn" text="Forgot your password?" class="login-label" ios:marginBottom="3%" android:marginBottom="1" (tap)="forgotPassword()"></Label>
     </StackLayout>
-
     <Label class="login-label sign-up-label" (tap)="toggleForm()">
         <FormattedString>
             <Span [text]="isLoggingIn ? 'Don’t have an account? ' : 'Back to Login'"></Span>

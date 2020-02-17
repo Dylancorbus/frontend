@@ -2,6 +2,7 @@
   align-items: center;
   flex-direction: column;
   background: white;
+  height: 100%;
 }
 .form {
   margin-left: 30;
@@ -31,16 +32,6 @@
   font-size: 18;
   placeholder-color: rgb(0, 0, 0);
   color: black;
-}
-
-.btn-primary {
-  height: 50;
-  margin: 30 5 15 5;
-  background-color: #D51A1A;
-  color: white;
-  border-radius: 5;
-  font-size: 20;
-  font-weight: 600;
 }
 .login-label {
   horizontal-align: center;

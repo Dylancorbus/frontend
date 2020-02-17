@@ -1,15 +1,12 @@
-<ScrollView (scroll)="onScroll($event)">
-    <Label [text]="coordinates"></Label>
-    <GridLayout rows="200 200 200 200 200 200 200 200 200 200">
-        <Label row="0" text="Some row content goes here..."></Label>
-        <Label row="1" text="Some row content goes here..."></Label>
-        <Label row="2" text="Some row content goes here..."></Label>
-        <Label row="3" text="Some row content goes here..."></Label>
-        <Label row="4" text="Some row content goes here..."></Label>
-        <Label row="5" text="Some row content goes here..."></Label>
-        <Label row="6" text="Some row content goes here..."></Label>
-        <Label row="7" text="Some row content goes here..."></Label>
-        <Label row="8" text="Some row content goes here..."></Label>
-        <Label row="9" text="Some row content goes here..."></Label>
-    </GridLayout>
+<ScrollView (scroll)="onScroll($event)" class="home blk-txt" height="100%" backGroundColor="white">
+    <StackLayout>
+        <Label text="Available Trucks near you" class="h3 blk-txt text-center"></Label>
+        <Card:CardView class="cardStyle">
+            <StackLayout class="avail-truck" *ngFor="let truck of this.trucksService.nearbyTrucks">
+                <Label [text]="truck.name"></Label>
+                <Image [src]="truck.image" width="25%"></Image>
+                <Label [text]="truck.rating"></Label>
+            </StackLayout>
+        </Card:CardView>
+    </StackLayout>
 </ScrollView>
