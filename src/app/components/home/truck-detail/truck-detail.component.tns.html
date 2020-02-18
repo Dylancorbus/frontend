@@ -1,0 +1,9 @@
+<Button (tap)="goBack()"></Button>
+<FlexboxLayout flexDirection="column" class="page">
+    <FlexboxLayout class="m-15">
+        <Image [src]="truck.image" row="0" class="truck-image"></Image>
+        <Label class="h2" [text]="truck.id + '. '"></Label>
+        <Label class="h2" [text]="truck.name"></Label>
+    </FlexboxLayout>
+    <Label class="h4" [text]="truck.foodType"></Label>
+</FlexboxLayout>

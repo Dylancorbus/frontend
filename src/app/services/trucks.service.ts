@@ -1,81 +1,93 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Truck } from '../models/truck';
+import {Truck} from '../models/truck';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class TrucksService {
 
-  public nearbyTrucks: Array<Truck> = [
-    {
-      name: 'Some Interesting Food truck name',
-      image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: 5,
-      address: '6875 e camelback',
-      phone: 14087227387,
-      priceLevel: 2,
-      foodType: 'American'
-    },
-    {
-      name: 'Some Interesting Food truck name',
-      image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: 5,
-      address: '6875 e camelback',
-      phone: 14087227387,
-      priceLevel: 2,
-      foodType: 'American'
-    },
-    {
-      name: 'Some Interesting Food truck name',
-      image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: 5,
-      address: '6875 e camelback',
-      phone: 14087227387,
-      priceLevel: 2,
-      foodType: 'American'
-    },
-    {
-      name: 'Some Interesting Food truck name',
-      image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: 5,
-      address: '6875 e camelback',
-      phone: 14087227387,
-      priceLevel: 2,
-      foodType: 'American'
-    },
-    {
-      name: 'Some Interesting Food truck name',
-      image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: 5,
-      address: '6875 e camelback',
-      phone: 14087227387,
-      priceLevel: 2,
-      foodType: 'American'
-    },
-    {
-      name: 'Some Interesting Food truck name',
-      image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: 5,
-      address: '6875 e camelback',
-      phone: 14087227387,
-      priceLevel: 2,
-      foodType: 'American'
-    },
-    {
-      name: 'Some Interesting Food truck name',
-      image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: 5,
-      address: '6875 e camelback',
-      phone: 14087227387,
-      priceLevel: 2,
-      foodType: 'American'
+    public nearbyTrucks: Array<Truck> = [
+        {
+            name: 'Some Interesting Food truck name',
+            id: 23,
+            image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+            rating: 5,
+            address: '6875 e camelback',
+            phone: 14087227387,
+            priceLevel: 2,
+            foodType: 'American'
+        },
+        {
+            name: 'Some Interesting Food truck name',
+            id: 23,
+            image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+            rating: 5,
+            address: '6875 e camelback',
+            phone: 14087227387,
+            priceLevel: 2,
+            foodType: 'American'
+        },
+        {
+            name: 'Some Interesting Food truck name',
+            id: 23,
+            image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+            rating: 5,
+            address: '6875 e camelback',
+            phone: 14087227387,
+            priceLevel: 2,
+            foodType: 'American'
+        },
+        {
+            name: 'Some Interesting Food truck name',
+            id: 23,
+            image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+            rating: 5,
+            address: '6875 e camelback',
+            phone: 14087227387,
+            priceLevel: 2,
+            foodType: 'American'
+        },
+        {
+            name: 'Some Interesting Food truck name',
+            id: 23,
+            image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+            rating: 5,
+            address: '6875 e camelback',
+            phone: 14087227387,
+            priceLevel: 2,
+            foodType: 'American'
+        },
+        {
+            name: 'Some Interesting Food truck name',
+            id: 23,
+            image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+            rating: 5,
+            address: '6875 e camelback',
+            phone: 14087227387,
+            priceLevel: 2,
+            foodType: 'American'
+        },
+        {
+            name: 'Some Interesting Food truck name',
+            id: 23,
+            image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+            rating: 5,
+            address: '6875 e camelback',
+            phone: 14087227387,
+            priceLevel: 2,
+            foodType: 'American'
+        }
+    ];
+
+    constructor(private httpClient: HttpClient) {
     }
-  ];
 
-  constructor(private httpClient: HttpClient) { }
+    getTrucks(): Truck[] {
+        return null;
+    }
 
-  getAvailableTrucks() {
-
-  }
+    getTruck(id: number): Truck {
+        return this.nearbyTrucks.find(trk => trk.id === id );
+    }
 }
