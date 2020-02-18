@@ -2,11 +2,11 @@
   "name": "frontend",
   "nativescript": {
     "id": "com.frontend.mobile",
-    "tns-android": {
-      "version": "6.2.0"
-    },
     "tns-ios": {
-      "version": "6.2.0"
+      "version": "6.4.2"
+    },
+    "tns-android": {
+      "version": "6.4.1"
     }
   },
   "version": "0.0.0",

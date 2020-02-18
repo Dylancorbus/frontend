@@ -1,14 +1,13 @@
 <ScrollView (scroll)="onScroll($event)" class="home blk-txt" height="100%" backGroundColor="white">
     <StackLayout>
         <Label text="Available Trucks near you" class="h3 blk-txt text-center"></Label>
-        <Card:CardView class="cardStyle">
+        <Card:CardView class="cardStyle" [nsRouterLink]="">
             <StackLayout class="avail-truck" *ngFor="let truck of this.trucksService.nearbyTrucks">
                 <GridLayout rows="65, auto, *" class="truck-stats">
-                    <Label [text]="truck.name" row="0" class="truck-name" fontAttributes="Bold"></Label>
+                    <Label [text]="truck.name" row="0" class="truck-name blk-txt" fontAttributes="Bold"></Label>
                     <Image [src]="truck.image" row="0" class="truck-image"></Image>
                     <Label [text]="this.getDollarSign(truck.priceLevel)" row="0" class="truck-price text-left"></Label>
-                    <StarRating emptyBorderColor="white" emptyColor="white" filledBorderColor="black" filledColor="gold"
-                        row="0" class="truck-rating" [value]="truck.rating" max="5"></StarRating>
+                    <Label class="truck-rating text-center" [text]="this.getStars(truck.rating)"></Label>
                     <Label [text]="truck.foodType" row="0" class="truck-foodType text-right"></Label>
                 </GridLayout>
                 <GridLayout rows="60, auto, *" width="95%" height="45">
@@ -16,7 +15,6 @@
                     <Label [text]="truck.phone" row="0" class="text-right wht-txt pr-1 mr-2"></Label>
                 </GridLayout>
             </StackLayout>
-
         </Card:CardView>
     </StackLayout>
 </ScrollView>
