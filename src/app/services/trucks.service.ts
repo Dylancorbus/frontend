@@ -10,39 +10,67 @@ export class TrucksService {
 
   public nearbyTrucks: Array<Truck> = [
     {
-      name: 'Food Truck',
+      name: 'Some Interesting Food truck name',
       image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: '5'
+      rating: 5,
+      address: '6875 e camelback',
+      phone: 14087227387,
+      priceLevel: 2,
+      foodType: 'American'
     },
     {
-      name: 'Food Truck',
+      name: 'Some Interesting Food truck name',
       image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: '5'
+      rating: 5,
+      address: '6875 e camelback',
+      phone: 14087227387,
+      priceLevel: 2,
+      foodType: 'American'
     },
     {
-      name: 'Food Truck',
+      name: 'Some Interesting Food truck name',
       image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: '5'
+      rating: 5,
+      address: '6875 e camelback',
+      phone: 14087227387,
+      priceLevel: 2,
+      foodType: 'American'
     },
     {
-      name: 'Food Truck',
+      name: 'Some Interesting Food truck name',
       image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: '5'
+      rating: 5,
+      address: '6875 e camelback',
+      phone: 14087227387,
+      priceLevel: 2,
+      foodType: 'American'
     },
     {
-      name: 'Food Truck',
+      name: 'Some Interesting Food truck name',
       image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: '5'
+      rating: 5,
+      address: '6875 e camelback',
+      phone: 14087227387,
+      priceLevel: 2,
+      foodType: 'American'
     },
     {
-      name: 'Food Truck',
+      name: 'Some Interesting Food truck name',
       image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: '5'
+      rating: 5,
+      address: '6875 e camelback',
+      phone: 14087227387,
+      priceLevel: 2,
+      foodType: 'American'
     },
     {
-      name: 'Food Truck',
+      name: 'Some Interesting Food truck name',
       image: 'https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-      rating: '5'
+      rating: 5,
+      address: '6875 e camelback',
+      phone: 14087227387,
+      priceLevel: 2,
+      foodType: 'American'
     }
   ];
 

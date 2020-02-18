@@ -1,11 +1,51 @@
 
 .cardStyle {
-  background-color: red;
   color: rgb(43, 43, 43);
 }
 
 .cardContent {
-  padding: 20;
+  padding: 10;
   font-weight: bold;
   font-size: 30;
+}
+
+.truck-name {
+  margin-top: -30;
+  font-size: 20%;
+}
+
+.truck-stats {
+  margin-top: 4;
+  background-color: lightgray;
+  width: 95%;
+  height: 70;
+  border-radius: 5;
+}
+
+.truck-image {
+  margin-left: 82%;
+  margin-top: -10;
+  width: 15%;
+  border-radius: 100;
+}
+
+.truck-rating {
+  margin-top: 50;
+  margin-left: 3;
+}
+
+.truck-price {
+  margin-top: 50;
+}
+
+.truck-foodType {
+  margin-top: 50;
+  margin-right: 3;
+}
+
+
+.avail-truck {
+  margin-top: 5;
+  border-radius: 5;
+  width: 95%;
 }
