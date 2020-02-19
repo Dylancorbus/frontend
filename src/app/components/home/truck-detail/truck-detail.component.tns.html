@@ -1,0 +1,14 @@
+<ActionBar backgroundColor="#d3d3d3" [title]="truck.name">
+    <Button class="close-btn" (tap)="onClose()"></Button>
+</ActionBar>
+<StackLayout class="page">
+    <Label class="my-label" style="text-align: center;" text="Modal view with ActionBar" textWrap="true"></Label>
+
+<!--    <FlexboxLayout flexDirection="column" class="page">&ndash;&gt;-->
+<!--        <FlexboxLayout class="m-15">-->
+            <Image [src]="truck.image" row="0" class="truck-image"></Image>
+            <Label class="h2" [text]="truck.id + '. '"></Label>
+<!--        </FlexboxLayout>-->
+        <Label class="h4" [text]="truck.foodType"></Label>
+<!--    </FlexboxLayout>-->
+</StackLayout>

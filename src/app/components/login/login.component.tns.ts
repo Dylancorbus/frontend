@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
+import {alert, prompt} from 'tns-core-modules/ui/dialogs';
 
 import {User} from '../../models/user';
 import {UserService} from '../../services/user.service';
@@ -10,10 +11,10 @@ import {UserService} from '../../services/user.service';
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
     title = 'Mobile Order App';
     isLoggingIn = true;
     user: User;
-
     @ViewChild('password', null) password: ElementRef;
     @ViewChild('confirmPassword', null) confirmPassword: ElementRef;
 
@@ -66,7 +67,23 @@ export class LoginComponent implements OnInit {
     }
 
     forgotPassword() {
-
+        prompt({
+            title: 'Forgot Password',
+            message: `Enter the email address you used to register for ${this.title} to reset your password.`,
+            inputType: 'email',
+            defaultText: '',
+            okButtonText: 'Ok',
+            cancelButtonText: 'Cancel'
+        }).then((data) => {
+            if (data.result) {
+                this.userService.resetPassword(data.text.trim()).subscribe(res => {
+                    alert('Your password was successfully reset. Please check your email for instructions on choosing a new password.');
+                    this.isLoggingIn = true;
+                }, error => {
+                    alert('Unfortunately, an error occurred resetting your password.');
+                });
+            }
+        }, null);
     }
 
     focusPassword() {

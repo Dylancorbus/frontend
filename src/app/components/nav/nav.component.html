@@ -1,1 +1,31 @@
-<p>nav works!</p>
+<nav class="navbar navbar-expand-lg is-centered is-fullwidth" #stickyMenu [class.sticky]="sticky" id="mainNav">
+
+
+    <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span>&#9776;</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded text-light" id="link">About</a>
+            </li>
+            <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded text-light">Experience</a>
+            </li>
+            <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded text-light">Education</a>
+            </li>
+            <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded text-light">Projects</a>
+            </li>
+            <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded text-light">Blog</a>
+            </li>
+            <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded text-light">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>

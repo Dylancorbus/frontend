@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
     providedIn: 'root'
 })
 export class UserService {
-  /*TODO uncomment for app*/
+    /*TODO uncomment for app*/
     // public user: User = new User();
     public user: User = JSON.parse('{\n' +
         ' "lastName": "Corbus",\n' +

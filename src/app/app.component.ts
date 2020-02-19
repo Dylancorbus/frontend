@@ -1,12 +1,18 @@
-import {AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
-import {RadSideDrawerComponent} from 'nativescript-ui-sidedrawer/angular';
-import { ActionBar } from '@nativescript/core/ui/action-bar/action-bar';
+import {AfterViewInit, ChangeDetectorRef, Component, NgModule, OnInit} from '@angular/core';
 import {UserService} from '@src/app/services/user.service';
 import {LocationService} from '@src/app/services/location.service';
 import {Location} from '@src/app/models/location';
-import {routes} from '@src/app/app.routes';
-const firebase = require('nativescript-plugin-firebase');
+import {LocationImlService} from '@src/app/services/locationIml.service';
+const firebase = null;
+
+@NgModule({
+    providers: [
+        {
+            provide: LocationService,
+            useClass: LocationImlService,
+        }
+    ]
+})
 
 @Component({
     selector: 'app-root',
@@ -19,12 +25,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     constructor(private _changeDetectionRef: ChangeDetectorRef, private auth: UserService, private location: LocationService) {
     }
 
-    @ViewChild(RadSideDrawerComponent, {static: true}) public drawerComponent: RadSideDrawerComponent;
-    private drawer: RadSideDrawer;
-
     ngAfterViewInit() {
-        this.drawer = this.drawerComponent.sideDrawer;
-        this._changeDetectionRef.detectChanges();
     }
 
     ngOnInit() {
@@ -35,34 +36,13 @@ export class AppComponent implements OnInit, AfterViewInit {
         }, function (e) {
             console.log('Error: ' + e.message);
         });
-        firebase.init({}).then(
-            () => {
-                console.log('firebase.init done');
-            },
-            error => {
-                console.log(`firebase.init error: ${error}`);
-            }
-        );
-    }
-
-    get mainContentText() {
-        return this._mainContentText;
-    }
-
-    set mainContentText(value: string) {
-        this._mainContentText = value;
-    }
-
-    public openDrawer() {
-        this.drawer.showDrawer();
-    }
-
-    public onCloseDrawerTap() {
-        this.drawer.closeDrawer();
-    }
-
-    public signOut() {
-        this.auth.loggedIn = false;
-        this.onCloseDrawerTap();
+        // firebase.init({}).then(
+        //     () => {
+        //         console.log('firebase.init done');
+        //     },
+        //     error => {
+        //         console.log(`firebase.init error: ${error}`);
+        //     }
+        // );
     }
 }
