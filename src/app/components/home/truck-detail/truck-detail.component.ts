@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Truck } from '@src/app/models/truck';
 import { TrucksService } from '@src/app/services/trucks.service';
-// import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
     selector: 'app-details',

@@ -4,7 +4,7 @@
         <Card:CardView class="cardStyle">
             <StackLayout class="avail-truck" *ngFor="let truck of this.trucksService.nearbyTrucks">
                 <GridLayout rows="65, auto, *" class="truck-stats">
-                    <Label [nsRouterLink]="['/truck', truck.id]"  [text]="truck.name" row="0" class="truck-name blk-txt" fontAttributes="Bold"></Label>
+                    <Label (tap)="onTap(truck.id)"  [text]="truck.name" row="0" class="truck-name blk-txt" fontAttributes="Bold"></Label>
                     <Image [src]="truck.image" row="0" class="truck-image"></Image>
                     <Label [text]="this.getDollarSign(truck.priceLevel)" row="0" class="truck-price text-left"></Label>
                     <Label class="truck-rating text-center" [text]="this.getStars(truck.rating)"></Label>

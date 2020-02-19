@@ -12,7 +12,7 @@ import {NativeScriptFormsModule} from 'nativescript-angular/forms';
 import {NativeScriptHttpClientModule} from 'nativescript-angular/http-client';
 import {NativeScriptUISideDrawerModule} from 'nativescript-ui-sidedrawer/angular';
 import { NavComponent } from '@src/app/components/nav/nav.component';
-import {HomeModule} from '@src/app/components/home/home.module';
+import {HomeModule} from '@src/app/components/home/home.module.tns';
 
 @NgModule({
     declarations: [

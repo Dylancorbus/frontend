@@ -1,16 +1,19 @@
 import {AfterViewInit, Component, OnInit, ViewContainerRef} from '@angular/core';
 import {TrucksService} from '@src/app/services/trucks.service';
-import {HomeComponent} from '../home.component';
+import { ModalDialogOptions, ModalDialogService } from 'nativescript-angular/modal-dialog';
+import { HomeComponent } from '../home.component.tns';
 
 @Component({
     selector: 'app-trucks',
     templateUrl: './trucks.component.html',
+    providers: [ModalDialogService],
     styleUrls: ['./trucks.component.scss'],
 })
 export class TrucksComponent implements OnInit, AfterViewInit {
     title = 'frontend';
 
-    constructor(private _vcRef: ViewContainerRef,
+    constructor(private _modalService: ModalDialogService,
+                private _vcRef: ViewContainerRef,
                 private trucksService: TrucksService) {
     }
 
@@ -47,10 +50,20 @@ export class TrucksComponent implements OnInit, AfterViewInit {
         }
     }
 
-    onScroll(args: any) {
-    }
+    onScroll(args: any) {}
 
     onTap(args: any): void {
+        const options: ModalDialogOptions = {
+            viewContainerRef: this._vcRef,
+            context: {
+                id: args
+            },
+            fullscreen: true
+        };
 
+        this._modalService.showModal(HomeComponent, options)
+            .then((result: string) => {
+                console.log(result);
+            });
     }
 }

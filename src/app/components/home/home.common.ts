@@ -14,5 +14,15 @@ export const providerDeclarations: any[] = [
 
 export const routes: Routes = [
     { path: 'trucks', component: TrucksComponent },
+    {
+        path: 'truck-actionbar',
+        component: TrucksComponent,
+        data: { title: 'Main page' },
+        children: [
+            {
+                path: 'modal-view', component: TruckDetailComponent
+            }
+        ]
+    },
     { path: 'truck/:id', component: TruckDetailComponent },
 ];
