@@ -8,8 +8,8 @@
                 <StackLayout class="category" *ngFor="let menuCategory of this.trucksService.selectedTruckMenu.menuCategories">
                 <Label class="category-name" [text]="menuCategory.category"></Label>
                     <StackLayout class="item" *ngFor="let menuItem of menuCategory.menuItems">
-                        <Label class="item-title" [text]="menuItem.title"></Label>
-                        <Label class="item-desc" [text]="menuItem.description"></Label>
+                        <Label class="item-title" (tap)="onTap(menuItem.id, menuCategory.category)" [text]="menuItem.title"></Label>
+                        <Label class="item-desc" textWrap="true" [text]="menuItem.description"></Label>
                         <Label class="item-price" text="${{menuItem.price}}"></Label>
                     </StackLayout>
                 </StackLayout>

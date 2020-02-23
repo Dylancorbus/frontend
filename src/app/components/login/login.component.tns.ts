@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
             console.log(data);
             this.userService.user = data;
             this.userService.loggedIn = true;
-            this.router.navigate(['/home']);
+            this.router.navigate(['/truck-actionbar']);
         }, error => {
             alert(`Unfortunately we could not find your account. ${JSON.stringify(error)}`);
         });

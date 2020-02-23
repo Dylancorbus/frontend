@@ -6,6 +6,7 @@
                 <Image class="drawer-image" [src]="this.auth.user.profilePic"
                        borderRadius="100%"></Image>
                 <Label class="blk-txt" [text]="this.auth.user.firstName"></Label>
+
                 <Label class="blk-txt" [text]="this.auth.user.email"></Label>
             </StackLayout>
             <StackLayout>
@@ -14,7 +15,7 @@
                 <Label text="Close" class="blk-txt text-center"  padding="10" backgroundColor="lightgray" width="100%" style="horizontal-align: center"
                    (tap)="onCloseDrawerTap()"></Label>
             </StackLayout>
-            <Button *ngIf="this.auth.loggedIn" text="Sign out" row="0" col="0"
+            <Button text="Sign out" row="0" col="0"
                     [nsRouterLink]="['/login']" borderWidth="0" class="sign-out-label m-t-10" (tap)="signOut()"></Button>
         </StackLayout>
         <StackLayout tkMainContent backgroundColor="white">
@@ -26,6 +27,5 @@
             </GridLayout>
             <router-outlet></router-outlet>
         </StackLayout>
-
     </RadSideDrawer>
 </GridLayout>

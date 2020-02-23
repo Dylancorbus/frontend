@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {ModalDialogParams} from 'nativescript-angular/modal-dialog';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ModalDialogOptions, ModalDialogParams, ModalDialogService} from 'nativescript-angular/modal-dialog';
 import {Page} from 'tns-core-modules/ui/page';
 import {Truck} from '@src/app/models/truck';
 import {TrucksService} from '@src/app/services/trucks.service';
@@ -9,11 +9,13 @@ import {ScrollEventData, ScrollView} from 'tns-core-modules/ui/scroll-view';
 import {Image} from 'tns-core-modules/ui/image';
 import {Button} from 'tns-core-modules/ui/button';
 import {Label} from 'tns-core-modules/ui/label';
+import {HomeComponent} from '@src/app/components/home/home.component';
 
 
 @Component({
     selector: 'app-details',
     templateUrl: './truck-detail.component.html',
+    providers: [ModalDialogService],
     styleUrls: ['./truck-detail.component.scss']
 })
 export class TruckDetailComponent implements OnInit {
@@ -22,8 +24,11 @@ export class TruckDetailComponent implements OnInit {
     constructor(
         private trucksService: TrucksService,
         private route: ActivatedRoute,
+        private router: Router,
         private routerExtensions: RouterExtensions,
+        private _vcRef: ViewContainerRef,
         private params: ModalDialogParams,
+        private _modalService: ModalDialogService,
         private page: Page
     ) {
     }
@@ -91,5 +96,22 @@ export class TruckDetailComponent implements OnInit {
     scaleFormula(current: number, totalMin: number, totalMax: number, scaledMin: number, scaledMax: number):
         number {
         return (scaledMax - scaledMin) * (current - totalMin) / (totalMax - totalMin) + scaledMin;
+    }
+
+    onTap(id: number, category: string): void {
+        const options: ModalDialogOptions = {
+            viewContainerRef: this._vcRef,
+            context: {
+                'id': id,
+                'category': category
+            },
+            fullscreen: true
+        };
+
+        this._modalService.showModal(HomeComponent, options)
+            .then((result: string) => {
+                console.log(result);
+            });
+        // this.router.navigate(['/item'], { relativeTo: this.route });
     }
 }
