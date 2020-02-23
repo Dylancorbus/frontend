@@ -11,5 +11,6 @@ export class WebLocationService {
   constructor() {
   }
 
+
   public getLocation() {}
 }

@@ -1,4 +1,3 @@
-import {LocationService} from '@src/app/services/location.service';
 import {Location} from '@src/app/models/location';
 import * as geolocation from 'nativescript-geolocation';
 import {Injectable} from '@angular/core';
