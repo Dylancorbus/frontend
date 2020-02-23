@@ -1,8 +1,12 @@
 import {LocationService} from '@src/app/services/location.service';
 import {Location} from '@src/app/models/location';
 import * as geolocation from 'nativescript-geolocation';
+import {Injectable} from '@angular/core';
 
-export class LocationImlService implements LocationService {
+@Injectable({
+  providedIn: 'root'
+})
+export class MobileLocationService {
 
   public location: Location;
 

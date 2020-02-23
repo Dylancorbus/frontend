@@ -1,14 +1,22 @@
-<ActionBar backgroundColor="#d3d3d3" [title]="truck.name">
-    <Button class="close-btn" (tap)="onClose()"></Button>
-</ActionBar>
-<StackLayout class="page">
-    <Label class="my-label" style="text-align: center;" text="Modal view with ActionBar" textWrap="true"></Label>
-
-<!--    <FlexboxLayout flexDirection="column" class="page">&ndash;&gt;-->
-<!--        <FlexboxLayout class="m-15">-->
-            <Image [src]="truck.image" row="0" class="truck-image"></Image>
-            <Label class="h2" [text]="truck.id + '. '"></Label>
-<!--        </FlexboxLayout>-->
-        <Label class="h4" [text]="truck.foodType"></Label>
-<!--    </FlexboxLayout>-->
-</StackLayout>
+<GridLayout rows="80, 300, *" height="100%">
+    <Image [src]="truck.image" row="1" margin="-280 0 0 0" id="truck-img"></Image>
+    <ScrollView (scroll)="onScroll($event)" row="2" marginTop="-380">
+        <GridLayout rows="280, *">
+            <Label row="0" class="fade"></Label>
+            <Label row="0" id="title" textWrap="true" class="title-menu" [text]="truck.name"></Label>
+            <StackLayout row="1" class="menu-list">
+                <StackLayout class="category" *ngFor="let menuCategory of this.trucksService.selectedTruckMenu.menuCategories">
+                <Label class="category-name" [text]="menuCategory.category"></Label>
+                    <StackLayout class="item" *ngFor="let menuItem of menuCategory.menuItems">
+                        <Label class="item-title" (tap)="onTap(menuItem.id, menuCategory.category)" [text]="menuItem.title"></Label>
+                        <Label class="item-desc" textWrap="true" [text]="menuItem.description"></Label>
+                        <Label class="item-price" text="${{menuItem.price}}"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </GridLayout>
+    </ScrollView>
+    <Label row="0" id="black-bar" class="black-bar" marginTop="310"></Label>
+    <Button class="close-btn btn" id="btn-back" row="0" marginTop="310" (tap)="onClose($event)"></Button>
+    <Label id="abTitle" class="abTitle" [text]="truck.name" marginTop="-76"></Label>
+</GridLayout>
