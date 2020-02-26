@@ -12,6 +12,7 @@ import {MenuItem} from '@src/app/models/menu-item';
 export class ItemComponent implements OnInit {
     quantity = 1;
     item: MenuItem;
+    total: number;
 
     constructor(
         private cartService: CartService,

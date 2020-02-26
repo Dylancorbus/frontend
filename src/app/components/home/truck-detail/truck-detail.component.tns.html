@@ -4,6 +4,7 @@
         <GridLayout rows="280, *">
             <Label row="0" class="fade"></Label>
             <Label row="0" id="title" textWrap="true" class="title-menu" [text]="truck.name"></Label>
+            <Label row="0" id="rating" textWrap="true" class="rating" [text]="this.trucksService.getStars(truck.rating)"></Label>
             <StackLayout row="1" class="menu-list">
                 <StackLayout class="category" *ngFor="let menuCategory of this.trucksService.selectedTruckMenu.menuCategories">
                 <Label class="category-name" [text]="menuCategory.category"></Label>

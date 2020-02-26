@@ -7,7 +7,7 @@
                     <Label (tap)="onTap(truck.id)"  [text]="truck.name" row="0" class="truck-name blk-txt" fontAttributes="Bold"></Label>
                     <Image [src]="truck.image" row="0" class="truck-image"></Image>
                     <Label [text]="this.getDollarSign(truck.priceLevel)" row="0" class="truck-price text-left"></Label>
-                    <Label class="truck-rating text-center" [text]="this.getStars(truck.rating)"></Label>
+                    <Label class="truck-rating text-center" [text]="this.trucksService.getStars(truck.rating)"></Label>
                     <Label [text]="truck.foodType" row="0" class="truck-foodType text-right"></Label>
                 </GridLayout>
                 <GridLayout rows="60, auto, *" width="95%" height="45" marginBottom="5">

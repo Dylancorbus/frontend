@@ -35,21 +35,6 @@ export class TrucksComponent implements OnInit, AfterViewInit {
         }
     }
 
-    getStars(rating: number) {
-        switch (rating) {
-            case 1:
-                return '★';
-            case 2:
-                return '★★';
-            case 3:
-                return '★★★';
-            case 4:
-                return '★★★★';
-            case 5:
-                return '★★★★★';
-        }
-    }
-
     onScroll(args: any) {}
 
     onTap(args: any): void {

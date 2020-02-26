@@ -11,10 +11,17 @@
     </ScrollView>
     <Button class="close-btn btn" id="btn-back" row="0" marginTop="310" (tap)="onClose($event)"></Button>
     <Label id="abTitle" class="abTitle" [text]="item.title" marginTop="-76"></Label>
-    <Label text="Qunatity" row="2" backgroundColor="red"></Label>
-    <GridLayout row="2" columns="auto, 40, auto" rows="60, auto, *" marginTop="10" backgroundColor="lightgray">
-        <Button (tap)="this.decrement()" row="0" col="1" text="-" class="decrement"></Button>
-        <Label row="0" col="2" class="qty" [text]="this.quantity"></Label>
-        <Button (tap)="this.increment()" row="0" col="3" text="+" class="increment"></Button>
+    <Label text="Special Options" class="label-title" row="1" backgroundColor="red"></Label>
+    <TextView editable="true" row="1" class="instruc">
+        <FormattedString>
+            <Span [text]="this.spclInstructions"></Span>
+        </FormattedString>
+    </TextView>
+    <GridLayout row="2" columns="auto, 40, auto, auto" rows="auto, auto, *" class="add-group">
+        <Button (tap)="this.decrement()" row="0"  text="-" class="decrement"></Button>
+        <Label row="0"  class="qty" [text]="this.quantity"></Label>
+        <Button (tap)="this.increment()" row="0"  text="+" class="increment"></Button>
+        <Button (tap)="this.increment()" row="0" col="4" text="Add to cart" class="add-to-cart"></Button>
+        <Label class="total-price" row="1" [text]="'$' + this.total"></Label>
     </GridLayout>
 </GridLayout>

@@ -184,4 +184,19 @@ export class TrucksService {
         return this.selectedTruckMenu.menuCategories.filter(cat => cat.category === category)
             .map(cat => cat.menuItems.filter(item => item.id === id)).map(arg => arg[0])[0];
     }
+
+    getStars(rating: number) {
+        switch (rating) {
+            case 1:
+                return '★';
+            case 2:
+                return '★★';
+            case 3:
+                return '★★★';
+            case 4:
+                return '★★★★';
+            case 5:
+                return '★★★★★';
+        }
+    }
 }

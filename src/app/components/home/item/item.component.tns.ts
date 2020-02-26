@@ -23,6 +23,8 @@ export class ItemComponent implements OnInit {
 
     quantity = 1;
     item: MenuItem;
+    total: number = null;
+    spclInstructions: string;
 
     constructor(
         private cartService: CartService,
@@ -47,17 +49,23 @@ export class ItemComponent implements OnInit {
         const id = this.params.context.id;
         const category = this.params.context.category;
         this.item = this.trucksService.getItem(id, category);
+        this.total = this.item.price;
+        this.spclInstructions = '';
     }
 
     increment() {
         if (this.quantity < 10) {
             this.quantity += 1;
+            this.total = Math.round(((this.item.price * this.quantity) + Number.EPSILON) * 100) / 100;
+            console.log(this.total);
         }
     }
 
     decrement() {
+        console.log('here')
         if (this.quantity > 0) {
             this.quantity -= 1;
+            this.total = Math.round(((this.item.price * this.quantity) + Number.EPSILON) * 100) / 100;
         }
     }
 
