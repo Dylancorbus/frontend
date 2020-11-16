@@ -1,38 +1,6 @@
 {
   "project_info": {
-    "project_number": "942854320801",
-    "firebase_url": "https://frontend-bd3f3.firebaseio.com",
-    "project_id": "frontend-bd3f3",
-    "storage_bucket": "frontend-bd3f3.appspot.com"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:942854320801:android:ea09e6e2233fe374f0b6e0",
-        "android_client_info": {
-          "package_name": "com.frontend.mobile"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "942854320801-9ri5vp5hn88pif8t756p3poe48c7nro6.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAJxBAoXQB4ZmC-KeHC9v5wqKRvDxnQ7Ro"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "942854320801-9ri5vp5hn88pif8t756p3poe48c7nro6.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "942854320801-okt4e8d5g9c0u5ustjdc5m6nfog3kt4c.apps.googleusercontent.com",
+    "proj.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.frontend.mobile"
